@@ -17,14 +17,16 @@ module.exports = {
   },
 
   webpack: {
-    entry: src + '/js/app.js',
+    entry: src + '/js/main.js',
     output: {
       filename: 'bundle.js'
     },
+    devtool: 'inline-source-map',
     resolve: {
-        root: [
-            path.join(current, 'bower_components')
-        ]
+      root: [
+        path.join(current, 'bower_components'),
+        current
+      ]
     },
     plugins: [
       new webpack.ResolverPlugin(
@@ -38,7 +40,12 @@ module.exports = {
         jQuery: "jquery",
         $: "jquery"
       })
-    ]
+    ],
+    module: {
+      loaders: [
+        {test: /\.hbs$/, loader: "handlebars-loader"}
+      ]
+    }
   },
   
   copy: {

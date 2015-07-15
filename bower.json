@@ -16,6 +16,8 @@
   "devDependencies": {
     "backbone": "~1.2.1",
     "jquery": "~2.1.4",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "marionette": "~2.4.2",
+    "handlebars": "~3.0.3"
   }
 }
