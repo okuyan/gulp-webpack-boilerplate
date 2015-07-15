@@ -15,6 +15,6 @@ console.log(config.src);
         paths: [ path.join(__dirname, 'less', 'includes') ]
       }))
       .pipe(concat(config.output))
-      .pipe(gulpif(config.minify, minify()))    // 必要ならminifyする
-      .pipe(gulp.dest(config.dest));            // 出力する
+      .pipe(gulpif(config.minify, minify()))
+      .pipe(gulp.dest(config.dest));
 });

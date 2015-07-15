@@ -32,11 +32,11 @@ module.exports = {
   },
 
   less: {
-    src: [  // もし外部のcssフレームワーク使うなら配列の先頭で読み込むと良い
-      src + '/less/style.less'  // ファイル名の先頭がアンスコはビルド対象外にする
+    src: [  // load third party less if needed
+      src + '/less/style.less'
     ],
     dest: dest + '/css/',
-    output: 'style.css',  // 出力ファイル名
+    output: 'style.css',
     autoprefixer: {
       browsers: ['last 2 versions']
     },
