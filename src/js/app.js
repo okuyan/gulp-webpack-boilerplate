@@ -1,10 +1,9 @@
 // @file app.js
-(function () {
-    'use strict';
+var Hello = require('./components/Hello');
+var $ = require('jquery');
 
-    var Hello = require('./components/Hello');
-
-    var hello = new Hello();
-
-    document.write(hello.message);
+(function(){
+  var hello = new Hello();
+  
+  $('#hoge').append(hello.message);
 })();

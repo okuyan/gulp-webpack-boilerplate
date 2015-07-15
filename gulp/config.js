@@ -1,9 +1,11 @@
 // @file config.js
+var webpack = require('webpack');
 var path = require('path');
 
 var dest = './build'; 
 var src = './src'; 
 var relativeSrcPath = path.relative('.', src);
+var current = process.cwd();
 
 module.exports = {
   dest: dest,
@@ -20,8 +22,23 @@ module.exports = {
       filename: 'bundle.js'
     },
     resolve: {
-      extensions: ['', '.js']
-    }
+        root: [
+            path.join(current, 'bower_components')
+        ]
+    },
+    plugins: [
+      new webpack.ResolverPlugin(
+        new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
+      ),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.AggressiveMergingPlugin(),
+      new webpack.ProvidePlugin({
+        jQuery: "jquery",
+        $: "jquery"
+      })
+    ]
   },
   
   copy: {

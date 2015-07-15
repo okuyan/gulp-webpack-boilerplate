@@ -1,0 +1,21 @@
+{
+  "name": "gulp-webpack-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/okuyan/gulp-webpack-boilerplate",
+  "authors": [
+    "okuyan <yukookuyama@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "backbone": "~1.2.1",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
